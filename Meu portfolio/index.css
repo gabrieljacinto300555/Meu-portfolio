@@ -1,0 +1,352 @@
+:root {
+    --bg: #ffffff;
+    --bg-alt: #fdf0f4;
+    --texto: #3a1f28;
+    --texto-suave: #6b4452;
+    --primaria: #c2255c;
+    --sobre-primaria: #ffffff;
+    --borda: #f4cddb;
+    --erro: #b00020;
+    --sucesso: #0b6b2e;
+    --raio: 12px;
+}
+
+:root[data-theme="dark"] {
+    --bg: #1f1418;
+    --bg-alt: #2b1b21;
+    --texto: #fbeff3;
+    --texto-suave: #d9b8c4;
+    --primaria: #f4a6bf;
+    --sobre-primaria: #1f1418;
+    --borda: #4d303a;
+    --erro: #ff8a9b;
+    --sucesso: #6fdc98;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    background: var(--bg);
+    color: var(--texto);
+    transition: background 0.3s, color 0.3s;
+}
+
+a {
+    color: var(--primaria);
+}
+
+:focus-visible {
+    outline: 3px solid var(--primaria);
+    outline-offset: 3px;
+}
+
+.pular-conteudo {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: var(--primaria);
+    color: var(--sobre-primaria);
+    padding: 0.5rem 1rem;
+    z-index: 200;
+}
+
+.pular-conteudo:focus {
+    left: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--borda);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: var(--texto);
+    margin-right: auto;
+}
+
+nav {
+    display: none;
+    width: 100%;
+    order: 3;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+nav.aberto {
+    display: flex;
+}
+
+nav a {
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 500;
+}
+
+nav a:hover {
+    background: var(--bg-alt);
+    color: var(--primaria);
+}
+
+#menu-btn,
+#tema-btn {
+    background: var(--bg-alt);
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    font-size: 1.25rem;
+    padding: 0.4rem 0.75rem;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+#menu-btn:hover,
+#tema-btn:hover {
+    border-color: var(--primaria);
+}
+
+/* ===== Seções ===== */
+main section {
+    padding: 3.5rem 1.25rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    margin: 0 0 0.25rem;
+    line-height: 1.15;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-top: 0;
+}
+
+.inicio {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+.inicio h2 {
+    color: var(--texto-suave);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.inicio img {
+    width: 220px;
+    height: 220px;
+    max-width: 100%;
+    border-radius: 50%;
+    border: 4px solid var(--primaria);
+    background: var(--bg-alt);
+}
+
+.botao {
+    display: inline-block;
+    background: var(--primaria);
+    color: var(--sobre-primaria);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--raio);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.15s, filter 0.15s;
+}
+
+.botao:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.habilidades {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.habilidades li {
+    background: var(--bg-alt);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 1.25rem 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+.projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.projeto {
+    background: var(--bg-alt);
+    border: 1px solid var(--borda);
+    border-radius: var(--raio);
+    padding: 1.5rem;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.projeto:hover {
+    transform: translateY(-4px);
+    border-color: var(--primaria);
+}
+
+.projeto h3 {
+    margin-top: 0;
+    color: var(--primaria);
+}
+
+
+#form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    max-width: 600px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+label {
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    font: inherit;
+    padding: 0.7rem 0.8rem;
+    border-radius: 8px;
+    border: 2px solid var(--borda);
+    background: var(--bg);
+    color: var(--texto);
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border-color: var(--erro);
+}
+
+.consentimento {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-weight: 400;
+}
+
+.consentimento input {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+}
+
+.erro {
+    color: var(--erro);
+    font-size: 0.9rem;
+    min-height: 1.1em;
+}
+
+.status {
+    margin: 0;
+    font-weight: 600;
+    color: var(--sucesso);
+}
+
+#form-contato .botao {
+    align-self: flex-start;
+}
+
+/* ===== Rodapé ===== */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 1.25rem;
+    border-top: 1px solid var(--borda);
+    background: var(--bg-alt);
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (min-width: 768px) {
+    #menu-btn {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        order: 0;
+        gap: 0.25rem;
+    }
+
+    .logo {
+        margin-right: 0;
+    }
+
+    .inicio {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .inicio img {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

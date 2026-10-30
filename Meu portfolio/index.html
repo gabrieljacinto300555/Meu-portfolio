@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfólio de Gabriel Jacinto Leal, estudante de tecnologia da informação em busca de estágio.">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body id="topo">
+    <header>
+        <a href="#inicio" class="logo">Meu Portfólio</a>
+
+        <button id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
+            ☰
+        </button>
+
+        <nav id="menu" aria-label="Menu principal">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre mim</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <button id="tema-btn" aria-label="Alternar modo claro e escuro">
+        </button>
+    </header>
+
+    <body id="topo">
+        <a href="#principal" class="pular-conteudo">Pular para o conteúdo</a>
+
+        <header>
+            <a href="#inicio" class="logo">Meu Portfólio</a>
+
+            <button id="menu-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+
+            </button>
+
+            <nav id="menu" aria-label="Menu principal">
+                <a href="#inicio">Início</a>
+                <a href="#sobre">Sobre mim</a>
+                <a href="#habilidades">Habilidades</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+                <a href="#consentimento">consentimento</a>
+                <a href="#mensagem">mensagem</a>
+                <a href="#email">email</a>
+                <a href="#nome">nome</a>
+            </nav>
+
+            <button id="tema-btn" aria-label="Alternar modo claro e escuro" aria-pressed="false">
+
+            </button>
+        </header>
+
+        <main id="principal">
+            <section id="inicio" class="inicio" aria-labelledby="saudacao">
+                <div class="inicio-texto">
+                    <h1 id="saudacao">Olá!</h1>
+                    <h2>Meu nome é Gabriel Jacinto Leal</h2>
+                    <p>
+                        Sou estudante de tecnologia da informação e estou aprendendo desenvolvimento web.
+                    </p>
+                    <a href="#projetos" class="botao">Ver meus projetos</a>
+                </div>
+
+                <img src="WhatsApp Image 2026-10-30 at 16.05.49.jpeg" alt="Avatar que me representa" width="280"
+                    height="280">
+            </section>
+
+            <section id="sobre" aria-labelledby="titulo-sobre">
+                <h2 id="titulo-sobre">Sobre mim</h2>
+                <p>
+                    Sou estudante e tenho interesse em programação e
+                    desenvolvimento de sites. Meu objetivo é conseguir
+                    uma oportunidade de estágio na área de tecnologia,
+                    aprender novas habilidades e desenvolver projetos.
+                </p>
+            </section>
+
+            <section id="habilidades" aria-labelledby="titulo-habilidades">
+                <h2 id="titulo-habilidades">Minhas habilidades</h2>
+                <ul class="habilidades">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Diferenciar IAs clássicas e discriminativas</li>
+                </ul>
+            </section>
+
+            <section id="projetos" aria-labelledby="titulo-projetos">
+                <h2 id="titulo-projetos">Meus projetos</h2>
+
+                <div class="projetos">
+                    <article class="projeto">
+                        <h3>Projeto Landing Page</h3>
+                        <p>Um trabalho em dupla sobre uma escola de idiomas.</p>
+                        <p>Tecnologias: HTML e CSS.</p>
+                    </article>
+
+                    <article class="projeto">
+                        <h3>Projeto Clínica Vida Saudável</h3>
+                        <p>Um projeto com página de uma clínica chamada “Clínica Vida Saudável”, apresentando médicos,
+                            serviços e informações importantes.</p>
+                        <p>Tecnologias: HTML, CSS e JavaScript.</p>
+                    </article>
+
+                    <article class="projeto">
+                        <h3>Projeto Página de notícias</h3>
+                        <p>O projeto consistia em usar tags semânticas, como: nav, main, section e footer.</p>
+                        <p>Tecnologias: HTML (tags semânticas).</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="contato" aria-labelledby="titulo-contato">
+                <h2 id="titulo-contato">Entre em contato</h2>
+
+                <form id="form-contato" novalidate>
+                    <div class="campo">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" autocomplete="name" required
+                            aria-describedby="erro-nome">
+                        <span class="erro" id="erro-nome" role="alert"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required
+                            aria-describedby="email">
+                        <span class="erro" id="email" role="alert"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required
+                            aria-describedby="mensagem"></textarea>
+                        <span class="erro" id="mensagem" role="alert"></span>
+                    </div>
+
+                    <div class="campo">
+                        <label class="consentimento">
+                            <input type="checkbox" id="consentimento" name="consentimento" required
+                                aria-describedby="consentimento">
+                            Concordo em utilizar meus dados para responder
+                            a esta mensagem.
+                        </label>
+                        <span class="erro" id="consentimento" role="alert"></span>
+                    </div>
+
+                    <button type="submit" class="botao">Enviar mensagem</button>
+                    <p id="status-form" class="status" role="status" aria-live="polite"></p>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>& <span id="ano">2026</span> Gabriel Jacinto Leal</p>
+            <a href="#topo">Voltar ao topo </a>
+        </footer>
+    </body>
+
+</body>
+
+</html>
